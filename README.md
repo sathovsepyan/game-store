@@ -8,27 +8,38 @@ Members: _Timur Kartaev, Satenik Hovsepyan, Bruno Duarte_
 
 ##### Features to implement
 
-1. TODO
-1. TODO
-1. 
+1. Authentication
+1. Basic player functionalities 
+1. Basic developer functionalities
+1. Game/service interaction
+1. Quality of Work
+1. Non-functional requirements
 
 ##### Brief explanation on how to implement the previous features
 
-1. TODO
-1. TODO
-1. 
+1. Register, login and reset the password is already implemented in Django and we just plan to use them.
+1. We are going to create models to represent the games, purchases, and the search feature and also built in constraints on what each user can play according their purchases.
+1. We are going to create a model "profile" to represent Developers and they can add or remove games from their shelf.
+1. We are going to use the API of the browser called "messages" to capture the data sent between the iframes.
+1. All code is going to be documented and separeted in files to accordingly apply the DRY paradigm.
 
 ##### Extra features to implement
 
-1. TODO
-1. TODO
-1. 
+1. Mobile Friendly
+1. Social media sharing
+1. RESTful API 
+1. 3rd party login
+1. Save/load and resolution feature 
+1. Own game
 
 ##### Brief explanation on how to implement the previous features
 
-1. TODO
-1. TODO  
-1. 
+1. We plan to use bootstrap for the mobile friendly components
+1. We plan to use OpenGraph.  
+1. Different views for providing the REST service.
+1. We are going to use the third party app (python-auth) for Social Media login
+1. We are going to store the state of the game in a model
+1. We are going to develop a very basic game of guessing cards/values.
 
 ## Models and views needed (draft)
 
