@@ -83,7 +83,41 @@ Members: _Timur Kartaev, Satenik Hovsepyan, Bruno Duarte_
     
 ##### Views
 
- * TODO
+
+##### Authentication
+* LoginView
+* RegisterView
+* PasswordResetView
+
+##### Basic player functionalities
+* GameListView
+* CartView
+* CheckOutView
+* OrderFinishedView
+* ProfileView
+* GamePlayView
+
+##### Basic developer functionalities
+* CreateGameView
+* EditGameView
+* RemoveGameView
+* GameListView
+* SaleStatisticsView
+
+##### Game/service interaction
+* SaveUserScoreView
+* ScoreDashboardView
+
+##### RESTful API
+* GameListView
+* HighScoresView
+* StatisticsView
+
+
+
+
+
+
 
 
 ## Planification
