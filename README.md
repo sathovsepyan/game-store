@@ -96,33 +96,134 @@ Members: _Timur Kartaev, Satenik Hovsepyan, Bruno Duarte_
 
 #### Implementation order and timetable (draft)
 
- * TODO
+ * Week 0 is the week 52 from 2018
+ * Week 1 corresponds to the week 1 from 2019
 
 ##### Timetable (draft)
  
+###### Week 0 is the week 52 from 2018, Week 1 corresponds to the week 1 from 2019
+ 
 <table>
   <tr>
-    <td> Column 1 </td>
-    <td> Column 2 </td>
-    <td> Column 3 </td>
-    <td> Column 4 </td>
-    <td> Column 5 </td>
-    <td> Column 6 </td>
+    <th> Week 0 </th>
+    <th> Week 1 </th>
+    <th> Week 2 </th>
+    <th> Week 3 </th>
+    <th> Week 4 </th>
+    <th> Week 5 </th>
+    <th> Week 6 </th>
+    <th> Week 7 </th>
+    <th> Week 8 </th>
   </tr>
   <tr>
-    <td> Column 1 </td>
-    <td> Column 2 </td>
-    <td> Column 3 </td>
-    <td> Column 4 </td>
-    <td> Column 5 </td>
-    <td> Column 6 </td>
+    <td> 24-30.12 </td>
+    <td> 01-06.01 </td>
+    <td> 07-13.01 </td>
+    <td> 14-20.01 </td>
+    <td> 21-27.01 </td>
+    <td> 28-31.01 </td>
+    <td> 04-10.02 </td>
+    <td> 11-17.02 </td>
+    <td> 18-19.02 </td>
   </tr>
   <tr>
-    <td> Column 1 </td>
-    <td> Column 2 </td>
-    <td> Column 3 </td>
-    <td> Column 4 </td>
-    <td> Column 5 </td>
-    <td> Column 6 </td>
+    <td> Models creation </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
   </tr>
+  <tr>
+    <td>  </td>
+    <td> Authentication </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td> Creation of the store and search capabilities </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> The view for playing the game </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> Interaction between payment system and the game store </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> Adding the RESTful capabilities to the existing models </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> Implementation of sharing through social media </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>  
+      <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> Documentation </td>    
+    <td>  </td>    
+  </tr>    
+  </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td> Deployment and delivery </td>    
+  </tr>
+  
 </table>
