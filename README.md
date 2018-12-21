@@ -44,6 +44,8 @@ Members:
 1. We are going to store the state of the game in a model
 1. We are going to develop a very basic game of guessing cards/values.
 
+*Note*: We plan to start implementing extra features in aforementioned order and implement as many of them as we have time for using our best effort.
+
 ## Models and views needed (draft)
 
 ##### Models
