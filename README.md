@@ -195,7 +195,7 @@ Members:
     <td>  </td>
     <td>  </td>
     <td> Browse of games, the store itself where the games can be bought. Including the search of games, and games should have a category.
-Inventory of games acquired by a given player
+
  </td>
     <td>  </td>
     <td>  </td>
@@ -207,8 +207,34 @@ Inventory of games acquired by a given player
     <tr>
     <td>  </td>
     <td>  </td>
+    <td> 
+Inventory of games acquired by a given player
+ </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>  
+    <tr>
+    <td>  </td>
+    <td>  </td>
     <td>  </td>
     <td> Display the highscores of a given game.
+
+ </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>
+     <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> 
 Buy games through the payment gateway.
  </td>
     <td>  </td>
@@ -223,13 +249,40 @@ Buy games through the payment gateway.
     <td>  </td>
     <td>  </td>
     <td> The view for playing the game, and actually play the game.
+
+ </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+    </tr>
+  <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>
 Add and remove games to the store, modify price, and other details.
+
+ </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+    </tr>
+  <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> 
 Sales statistics, visualization for that developer.
  </td>
     <td>  </td>
     <td>  </td>
     <td>  </td>    
     <td>  </td>    
+    </tr>    
     <tr>
     <td>  </td>
     <td>  </td>
