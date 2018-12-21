@@ -194,7 +194,7 @@ Members:
     <tr>
     <td>  </td>
     <td>  </td>
-    <td> Browse of games, the store itself where the games can be bought. Including the search of games, and games should have a category
+    <td> Browse of games, the store itself where the games can be bought. Including the search of games, and games should have a category.
 Inventory of games acquired by a given player
  </td>
     <td>  </td>
@@ -208,7 +208,9 @@ Inventory of games acquired by a given player
     <td>  </td>
     <td>  </td>
     <td>  </td>
-    <td> The view for playing the game </td>
+    <td> Display the highscores of a given game.
+Buy games through the payment gateway.
+ </td>
     <td>  </td>
     <td>  </td>
     <td>  </td>
@@ -220,7 +222,10 @@ Inventory of games acquired by a given player
     <td>  </td>
     <td>  </td>
     <td>  </td>
-    <td> Interaction between payment system and the game store </td>
+    <td> The view for playing the game, and actually play the game.
+Add and remove games to the store, modify price, and other details.
+Sales statistics, visualization for that developer.
+ </td>
     <td>  </td>
     <td>  </td>
     <td>  </td>    
@@ -231,7 +236,10 @@ Inventory of games acquired by a given player
     <td>  </td>
     <td>  </td>
     <td>  </td>
-    <td> Adding the RESTful capabilities to the existing models </td>
+    <td> Message service between the game and the store, user related saved games.
+Saving the state of a given game for a given player.
+Loading the state of a given game for a given player.
+ </td>
     <td>  </td>
     <td>  </td>    
     <td>  </td>    
@@ -243,7 +251,10 @@ Inventory of games acquired by a given player
     <td>  </td>
     <td>  </td>
     <td>  </td>
-    <td> Implementation of sharing through social media </td>
+    <td> Adding the RESTful capabilities to the existing models.
+Implementation of sharing through social media.
+Creation of a self-made game to deploy to the Store.
+ </td>
     <td>  </td>    
     <td>  </td>    
   </tr>  
@@ -255,7 +266,7 @@ Inventory of games acquired by a given player
     <td>  </td>
     <td>  </td>
     <td>  </td>
-    <td> Documentation </td>    
+    <td> Bug fixes </td>    
     <td>  </td>    
   </tr>    
   </tr>
@@ -268,7 +279,9 @@ Inventory of games acquired by a given player
     <td>  </td>
     <td>  </td>
     <td>  </td>    
-    <td> Deployment and delivery </td>    
+    <td>Documentation.
+Deployment and delivery.
+ </td>    
   </tr>
   
 </table>
