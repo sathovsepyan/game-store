@@ -3,7 +3,7 @@
 # WSD Autum 2018 Project - Game Store
 
 Members: 
-  *  Timur Kartaev 
+  *  Timur Kartaev 727642
   *  Satenik Hovsepyan 727561
   *  Bruno Duarte 727396
 
