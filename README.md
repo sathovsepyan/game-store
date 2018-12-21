@@ -210,6 +210,7 @@ Members:
 				 <li> 
 					Sales statistics, visualization for that developer.
 				 </li>
+				 <li>Partial deployment to Heroku</li>
 			  </ul>
 		   </td>
 		</tr>
