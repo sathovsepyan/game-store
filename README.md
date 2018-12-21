@@ -56,6 +56,7 @@ Members:
     * slug = SlugField
  * Game
     * title = CharField
+    * url = URLField
     * price = PositiveInegerField 
     * category = ForeignKey(Category) 
     * developer = ForeignKey(User) 
@@ -83,7 +84,12 @@ Members:
     * game = ForeignKey(Game) 
     * user = ForeignKey(User) 
     * score = IntegerField
-    
+ * GameState
+    * game = ForeignKey(Game)
+    * user = ForeignKey(User)
+    * state = JSONField
+    * saved = DateTimeField
+
 ##### Views
 
 
