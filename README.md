@@ -253,7 +253,7 @@ Members:
 		   <td>
 			  <ul>
 				 <li>Documentation.</li>
-				 <li>Deployment and delivery.</li>
+				 <li>Deployment and delivery to Heroku.</li>
 			  </ul>
 		   </td>
 		</tr>
