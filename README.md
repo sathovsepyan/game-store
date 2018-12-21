@@ -21,10 +21,10 @@ Members:
 ##### Brief explanation on how to implement the previous features
 
 1. Register, login and reset the password is already implemented in Django and we just plan to use them.
-1. We are going to create models to represent the games, purchases, and the search feature and also built in constraints on what each user can play according their purchases.
-1. We are going to create a model "profile" to represent Developers and they can add or remove games from their shelf.
-1. We are going to use the API of the browser called "messages" to capture the data sent between the iframes.
-1. All code is going to be documented and separeted in files to accordingly apply the DRY paradigm.
+1. We are going to create models to represent the games, purchases, and the search feature and also built in constraints on what each user can play according to their purchases.
+1. We are going to create a model "profile" to extend Django's user model and represent Developers/Players.  Developers can add or remove games from their shelf. 
+1. We are going to use messages for communication between the game and the game service.
+1. All code is going to be documented and separated in files to accordingly apply the DRY paradigm.
 
 ##### Extra features to implement
 
@@ -48,7 +48,7 @@ Members:
 
 ## Models and views needed (draft)
 
-##### Models
+### Models
 
  * Profile
     * role = CharField
@@ -92,7 +92,7 @@ Members:
     * state = JSONField
     * saved = DateTimeField
 
-##### Views
+### Views
 
 
 ##### Authentication
@@ -102,22 +102,24 @@ Members:
 
 ##### Basic player functionalities
 * GameListView
+* GamePlayView
 * CartView
 * CheckOutView
 * OrderFinishedView
 * ProfileView
-* GamePlayView
 
 ##### Basic developer functionalities
+* GameListView
 * CreateGameView
 * EditGameView
 * RemoveGameView
-* GameListView
 * SaleStatisticsView
 
 ##### Game/service interaction
 * SaveUserScoreView
 * ScoreDashboardView
+* SaveGameStateView
+* LoadGameStateView
 
 ##### RESTful API
 * GameListView
