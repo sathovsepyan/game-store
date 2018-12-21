@@ -194,7 +194,7 @@ Members:
     <tr>
     <td>  </td>
     <td>  </td>
-    <td> Browse of games, the store itself where the games can be bought. Including the search of games, and games should have a category.
+    <td> Browse of games, the store itself where the games can be bought. 
 
  </td>
     <td>  </td>
@@ -204,6 +204,19 @@ Members:
     <td>  </td>    
     <td>  </td>    
   </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  Including the search of games, and games should have a category.
+
+ </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>  
     <tr>
     <td>  </td>
     <td>  </td>
@@ -290,13 +303,39 @@ Sales statistics, visualization for that developer.
     <td>  </td>
     <td>  </td>
     <td> Message service between the game and the store, user related saved games.
-Saving the state of a given game for a given player.
-Loading the state of a given game for a given player.
+
  </td>
     <td>  </td>
     <td>  </td>    
     <td>  </td>    
   </tr>
+ <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> 
+Saving the state of a given game for a given player.
+
+ </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>
+ <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> 
+Loading the state of a given game for a given player.
+ </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>  
     <tr>
     <td>  </td>
     <td>  </td>
@@ -305,12 +344,38 @@ Loading the state of a given game for a given player.
     <td>  </td>
     <td>  </td>
     <td> Adding the RESTful capabilities to the existing models.
-Implementation of sharing through social media.
-Creation of a self-made game to deploy to the Store.
+
  </td>
     <td>  </td>    
     <td>  </td>    
   </tr>  
+<tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>
+Implementation of sharing through social media.
+
+ </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>  
+<tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td> 
+Creation of a self-made game to deploy to the Store.
+ </td>
+    <td>  </td>    
+    <td>  </td>    
+  </tr>    
       <tr>
     <td>  </td>
     <td>  </td>
@@ -333,8 +398,21 @@ Creation of a self-made game to deploy to the Store.
     <td>  </td>
     <td>  </td>    
     <td>Documentation.
-Deployment and delivery.
+
  </td>    
   </tr>
+    <tr>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>
+    <td>  </td>    
+    <td>
+Deployment and delivery.
+ </td>    
+  </tr>  
   
 </table>
