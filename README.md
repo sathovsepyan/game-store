@@ -159,6 +159,7 @@ Members:
 		   <td>
 			  <ul>
 				 <li>Models creation</li>
+				 <li>Testing initial deployment to Heroku</li>
 			  </ul>
 		   </td>
 		</tr>
