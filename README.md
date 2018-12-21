@@ -149,272 +149,112 @@ Members:
 ###### Week 0 is the week 52 from 2018, Week 1 corresponds to the week 1 from 2019
  
 <table>
-  <tr>
-    <th> Week 0 </th>
-    <th> Week 1 </th>
-    <th> Week 2 </th>
-    <th> Week 3 </th>
-    <th> Week 4 </th>
-    <th> Week 5 </th>
-    <th> Week 6 </th>
-    <th> Week 7 </th>
-    <th> Week 8 </th>
-  </tr>
-  <tr>
-    <td> 24-30.12 </td>
-    <td> 01-06.01 </td>
-    <td> 07-13.01 </td>
-    <td> 14-20.01 </td>
-    <td> 21-27.01 </td>
-    <td> 28-31.01 </td>
-    <td> 04-10.02 </td>
-    <td> 11-17.02 </td>
-    <td> 18-19.02 </td>
-  </tr>
-  <tr>
-    <td> Models creation </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
-  <tr>
-    <td>  </td>
-    <td> Authentication, register as a player and developer with email confirmation and reset password </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td> Browse of games, the store itself where the games can be bought. 
-
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  Including the search of games, and games should have a category.
-
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>  
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td> 
-Inventory of games acquired by a given player
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>  
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> Display the highscores of a given game.
-
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
-     <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> 
-Buy games through the payment gateway.
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> The view for playing the game, and actually play the game.
-
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-    </tr>
-  <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>
-Add and remove games to the store, modify price, and other details.
-
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-    </tr>
-  <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> 
-Sales statistics, visualization for that developer.
- </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-    </tr>    
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> Message service between the game and the store, user related saved games.
-
- </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
- <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> 
-Saving the state of a given game for a given player.
-
- </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>
- <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> 
-Loading the state of a given game for a given player.
- </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>  
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> Adding the RESTful capabilities to the existing models.
-
- </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>  
-<tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>
-Implementation of sharing through social media.
-
- </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>  
-<tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> 
-Creation of a self-made game to deploy to the Store.
- </td>
-    <td>  </td>    
-    <td>  </td>    
-  </tr>    
-      <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td> Bug fixes </td>    
-    <td>  </td>    
-  </tr>    
-  </tr>
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>Documentation.
-
- </td>    
-  </tr>
-    <tr>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>
-    <td>  </td>    
-    <td>
-Deployment and delivery.
- </td>    
-  </tr>  
-  
+		<tr>
+		   <th colspan="2"> Week and Dates </th>
+		   <th> Tasks </th>
+		</tr>
+		<tr>
+		   <td> Week 0 </td>
+		   <td> 24-30.12 </td>
+		   <td>
+			  <ul>
+				 <li>Models creation</li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 1 </td>
+		   <td> 01-06.01 </td>
+		   <td>
+			  <ul>
+				 <li>Authentication, register as a player and developer with email confirmation and reset password </li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 2 </td>
+		   <td> 07-13.01 </td>
+		   <td>
+			  <ul>
+			  <li>  
+				 Browse of games, the store itself where the games can be bought. 
+			  </li>
+			  <li>  Including the search of games, and games should have a category.</li>
+			  <li> 
+				 Inventory of games acquired by a given player
+			  </li>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 3 </td>
+		   <td> 14-20.01 </td>
+		   <td>
+			  <ul>
+				 <li>Display the highscores of a given game. </li>
+				 <li> 
+					Buy games through the payment gateway.
+				 </li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 4 </td>
+		   <td> 21-27.01 </td>
+		   <td>
+			  <ul>
+				 <li>The view for playing the game, and actually play the game. </li>
+				 <li>
+					Add and remove games to the store, modify price, and other details.
+				 </li>
+				 <li> 
+					Sales statistics, visualization for that developer.
+				 </li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 5 </td>
+		   <td> 28-31.01 </td>
+		   <td>
+			  <ul>
+				 <li>Message service between the game and the store, user related saved games.</li>
+				 <li> 
+					Saving the state of a given game for a given player.
+				 </li>
+				 <li> 
+					Loading the state of a given game for a given player.
+				 </li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 6 </td>
+		   <td> 04-10.02 </td>
+		   <td>
+			  <ul>
+				 <li>Adding the RESTful capabilities to the existing models.</li>
+				 <li> Implementation of sharing through social media.</li>
+				 <li> Creation of a self-made game to deploy to the Store.</li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 7 </td>
+		   <td> 11-17.02 </td>
+		   <td>
+			  <ul>
+				 <li> Bug fixes</li>
+			  </ul>
+		   </td>
+		</tr>
+		<tr>
+		   <td> Week 8 </td>
+		   <td> 18-19.02 </td>
+		   <td>
+			  <ul>
+				 <li>Documentation.</li>
+				 <li>Deployment and delivery.</li>
+			  </ul>
+		   </td>
+		</tr>
 </table>
