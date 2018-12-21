@@ -182,7 +182,7 @@ Members:
   </tr>
   <tr>
     <td>  </td>
-    <td> Authentication </td>
+    <td> Authentication, register as a player and developer with email confirmation and reset password </td>
     <td>  </td>
     <td>  </td>
     <td>  </td>
@@ -194,7 +194,9 @@ Members:
     <tr>
     <td>  </td>
     <td>  </td>
-    <td> Creation of the store and search capabilities </td>
+    <td> Browse of games, the store itself where the games can be bought. Including the search of games, and games should have a category
+Inventory of games acquired by a given player
+ </td>
     <td>  </td>
     <td>  </td>
     <td>  </td>
