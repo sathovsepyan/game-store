@@ -10,3 +10,4 @@ testdb.sqlite
 .python-version
 testdb*
 .vscode
+*.sqlite3
