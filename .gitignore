@@ -1,0 +1,12 @@
+*.pyc
+*.pyo
+.DS_Store
+__pycache__/
+*.pytest_cache/
+*.sublime-*
+.coverage
+htmlcov/*
+testdb.sqlite
+.python-version
+testdb*
+.vscode
