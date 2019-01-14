@@ -10,3 +10,9 @@ pylint
 pytest-django==3.3.2
 pytest-mock==1.10.0
 pytest-cov
+
+# web server
+gunicorn==19.9.0
+
+# heroku
+django-heroku==0.3.1
