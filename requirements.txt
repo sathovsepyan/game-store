@@ -1,1 +1,12 @@
 Django==2.1.5
+
+# Pep rules
+flake8==3.5.0
+flake8-quotes==1.0.0
+
+# testing packages
+pytest==3.6.2
+pylint
+pytest-django==3.3.2
+pytest-mock==1.10.0
+pytest-cov
