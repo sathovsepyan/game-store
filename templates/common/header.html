@@ -1,25 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Game shop</a>
+    <a class="navbar-brand" href="{% url 'index_page_view' %}">Game shop</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Browse Games</a>
+                <a class="nav-link" href="{% url 'index_page_view' %}">Browse Games</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">High score</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'sign_up_form_view' %}">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'log_in_django_view' %}">Sign in</a>
-            </li>
+            {% if not user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'sign_up_form_view' %}">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'log_in_django_view' %}">Sign in</a>
+                </li>
+            {% else %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{% url 'create_game_view' %}">Upload game</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'logout_view' %}" class="nav-link">Logout</a>
+                </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

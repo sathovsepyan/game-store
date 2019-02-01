@@ -16,3 +16,8 @@ gunicorn==19.9.0
 
 # heroku
 django-heroku==0.3.1
+
+# linting
+flake8==3.5.0
+flake8-quotes==1.0.0
+pylint

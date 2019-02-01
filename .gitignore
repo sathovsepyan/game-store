@@ -11,3 +11,4 @@ testdb.sqlite
 testdb*
 .vscode
 *.sqlite3
+*.sublime-project

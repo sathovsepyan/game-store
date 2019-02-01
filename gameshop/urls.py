@@ -21,6 +21,7 @@ from main.views import IndexPageView
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    path('games/', include('games.urls')),
     path('accounts/', include('profiles.urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]
