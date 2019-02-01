@@ -26,7 +26,7 @@ class CreateOrderView(CreateView):
         return kwargs
 
     def form_valid(self, form):
-        self.user.profile.games.add(self.game)
+        self.request.user.profile.games.add(self.game)
         return super().form_valid(form)
 
     def form_invalid(self, form):
