@@ -26,10 +26,8 @@ class CreateOrderView(CreateView):
         return kwargs
 
     def form_valid(self, form):
-        import ipdb; ipdb.set_trace()
         self.user.profile.games.add(self.game)
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        import ipdb; ipdb.set_trace()
         return super().form_invalid(form)
