@@ -1,7 +1,8 @@
-from django.views.generic import FormView
+from django.views.generic import FormView, TemplateView
 
 from profiles.models import Profile
 from profiles.forms import SignUpForm
+from games.models import Game
 
 
 class SingUpFormView(FormView):
@@ -24,3 +25,12 @@ class SingUpFormView(FormView):
             role=form.cleaned_data.get('role')
         )
         return super().form_valid(form)
+
+
+class PurchasedGameView(TemplateView):
+    template_name = 'profiles/purchased_games.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['games'] = self.request.user.profile.games.all()
+        return context

@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 
 from profiles.forms import SignInForm
-from profiles.views import SingUpFormView
+from profiles.views import SingUpFormView, PurchasedGameView
 
 urlpatterns = [
     path(
@@ -17,6 +17,12 @@ urlpatterns = [
             form_class=SignInForm
         ),
         name='log_in_django_view'
+    ),
+
+    path(
+        'purchased-games/',
+        PurchasedGameView.as_view(),
+        name='purchased_game_view'
     ),
 
     path(

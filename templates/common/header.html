@@ -25,9 +25,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="{% url 'create_game_view' %}">Upload game</a>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="{% url 'game_list_view' %}">My games</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="{% url 'purchased_game_view' %}">Purchased games</a>
                     </div>
                 </li>
                 <li class="nav-item">
