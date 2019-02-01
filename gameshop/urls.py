@@ -18,9 +18,12 @@ from django.urls import path, include
 
 from main.views import IndexPageView
 
+from main import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('accounts/', include('profiles.urls')),
-    path('', IndexPageView.as_view(), name='index_page_view')
+    path('', IndexPageView.as_view(), name='index_page_view'),
+    path('playgame/<int:game_id>', views.playgame),
 ]

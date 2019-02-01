@@ -1,0 +1,112 @@
+{% extends "main/base.html" %}
+
+
+{% block javascript %}
+    
+    <script>
+        /* global $ */
+        $(document).ready(function() {
+            'use strict';
+
+            // The iframe of the game
+            var iframeGame = document.getElementById('game_iframe');
+
+            // Send a message to the child iframe
+            var sendMessage = function(msg) {
+                // Make sure you are sending a string, and to stringify JSON
+                iframeGame.contentWindow.postMessage(msg, '*');
+            };
+
+            $(window).on('message', function(evt) {
+
+                //Note that messages from all origins are accepted
+
+                //=======================================================
+                // Message Protocol Manipulation
+                //=======================================================
+
+                //Get data from sent message
+                var data = evt.originalEvent.data;
+                
+                console.log(data);
+
+                if(data.messageType === null || data.messageType === '') {
+                    // Error: There is no messageType or is empty in the returned message.
+                    console.error("ERROR: There is no messageType or is empty in the returned message.");
+                }
+
+                switch(data.messageType) {
+                case "SCORE":
+                    if (typeof data.score === 'undefined' || data.score === null || data.score === '') {
+                        // Error: There is no 'score' attribute.
+                        console.error("ERROR: There is no 'score' attribute.");               
+                    } else {
+                        // process data.score.
+                        console.log("Score received from child")
+                    }           
+                    break;
+                case "SAVE":            
+                    if (typeof data.gameState === 'undefined' || data.gameState === null || data.gameState === '') {
+                        // Error: There is no 'gameState' attribute.
+                        console.error("ERROR: There is no 'gameState' attribute.");               
+                    } else {
+                        // process data.gameState.
+                        console.log("Game State received from child")
+                    }
+                    break;
+                case "SETTING":
+                    if (typeof data.options === 'undefined' || data.options === null || data.options === '') {
+                        // Error: There is no 'options' attribute.
+                        console.error("ERROR: There is no 'options' attribute.");               
+                    } else {
+                        // process data.options
+                        console.log("Settings received from child");
+                        // TODO: Vaidate that width and height are present.
+                        iframeGame.width = data.options.width;                        
+                        iframeGame.height = data.options.height;
+                    }
+                    break;         
+                case "LOAD_REQUEST":
+                    // process the LOAD_REQUEST
+                    // Sent from the game to the service, requesting that a game state (if there is one saved) is sent from the service to the game
+                    // The service will either respond with LOAD or  ERROR
+
+                        // TODO: Load game state from database
+                        var savedGame = {
+                            messageType: "LOAD",
+                            gameState: {
+                                playerItems: [
+                                    "Sword",
+                                    "Wizard Hat"
+                                ],
+                                score: 506.0 // Float
+                            }
+                        };
+                        //var savedGame = null;
+
+                    // If there is a game to Load, then we respond with LOAD, otherwise we respond with ERROR.            
+                    if (typeof savedGame === 'undefined' || savedGame === null || savedGame === '') {
+                        
+                        var messageError = {
+                            messageType: "ERROR"
+                        }
+                        sendMessage(messageError);
+
+                    } else {
+                        sendMessage(savedGame);
+                    }
+
+                    break;          
+                default:
+                    // Error: Invalid messageType
+                    console.error("ERROR: Invalid messageType.");
+                }
+
+            });
+        });
+    </script>
+{% endblock javascript %}
+
+{% block actualcontent %}
+    <iframe id="game_iframe" src={{game.url}} style="border:2px solid red;"></iframe>
+{% endblock actualcontent %}
