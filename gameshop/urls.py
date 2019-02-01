@@ -25,5 +25,6 @@ urlpatterns = [
 
     path('accounts/', include('profiles.urls')),
     path('', IndexPageView.as_view(), name='index_page_view'),
+    # TODO: To remove from here
     path('playgame/<int:game_id>', views.playgame),
 ]
