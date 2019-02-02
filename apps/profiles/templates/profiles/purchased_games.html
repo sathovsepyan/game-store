@@ -5,11 +5,16 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
+                <h1>Purchased games</h1>
                 <ul class="list-group">
                     {% for game in games %}
                         <li class="list-group-item">
                             <a href="{% url 'game_detail_view' game.pk %}" class="list-group-item list-group-item-action">{{ game.title }}</a>
                         </li>
+                        {% empty %}
+                            <li class="list-group-item">
+                                <a href="#">You don't have any game yet.</a>
+                            </li>
                     {% endfor %}
                 </ul>
             </div>

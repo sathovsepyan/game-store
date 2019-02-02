@@ -8,6 +8,6 @@ class IndexPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['games'] = Game.objects.all()
+        context['games'] = Game.objects.filter(is_deleted=False)
         return context
 

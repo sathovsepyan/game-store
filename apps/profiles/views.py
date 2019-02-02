@@ -1,8 +1,6 @@
 from django.views.generic import FormView, TemplateView
 
-from profiles.models import Profile
 from profiles.forms import SignUpForm
-from games.models import Game
 
 
 class SingUpFormView(FormView):
@@ -16,14 +14,7 @@ class SingUpFormView(FormView):
         return super().form_invalid(form)
 
     def form_valid(self, form):
-        user = form.save(commit=False)
-        user.username = user.email
-        user.save()
-
-        Profile.objects.create(
-            user=user,
-            role=form.cleaned_data.get('role')
-        )
+        form.save()
         return super().form_valid(form)
 
 

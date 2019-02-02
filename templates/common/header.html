@@ -24,10 +24,21 @@
                         {{ user.username }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{% url 'create_game_view' %}">Upload game</a>
-                      <a class="dropdown-item" href="{% url 'game_list_view' %}">My games</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{% url 'purchased_game_view' %}">Purchased games</a>
+                        {% if user.profile.is_developer %}
+                            <a class="dropdown-item" href="{% url 'create_game_view' %}">
+                                Upload game
+                            </a>
+                            <a class="dropdown-item" href="{% url 'game_list_view' %}">
+                                My games
+                            </a>
+                            <a href="{% url 'developer_dashboard_view' %}" class="dropdown-item">
+                                Sales dashboard
+                            </a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'purchased_game_view' %}">
+                                Purchased games
+                            </a>
+                      {% endif %}
                     </div>
                 </li>
                 <li class="nav-item">

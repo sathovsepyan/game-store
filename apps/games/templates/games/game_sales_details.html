@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1>Sales details of {{ game.title }}</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Order code</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in object_list %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ order.code }}</td>
+                                <td>{{ order.total_amount }}</td>
+                                <td>{{ order.created }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'developer_dashboard_view' %}" class="btn btn-link">Go to dashboard</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

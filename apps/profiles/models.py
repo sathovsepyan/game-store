@@ -16,6 +16,10 @@ class Profile(models.Model):
     )
     games = models.ManyToManyField(Game)
 
+    @property
+    def is_developer(self):
+        return self.role == 'developer'
+
     class Meta:
         verbose_name = 'Profile'
         verbose_name_plural = 'Profiles'

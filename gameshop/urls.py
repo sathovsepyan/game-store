@@ -24,5 +24,6 @@ urlpatterns = [
     path('orders/', include('orders.urls')),
     path('games/', include('games.urls')),
     path('accounts/', include('profiles.urls')),
+    path('developers/', include('games.developers_urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]

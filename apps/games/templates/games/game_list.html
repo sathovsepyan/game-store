@@ -4,14 +4,18 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <ul class="list-group">
+                <h1>My games</h1>
+                <div class="list-group">
                     {% for game in game_list %}
-                        <li class="list-group-item">
-                            <a href="#" class="list-group-item list-group-item-action">{{ game.title }}</a>
-                        </li>
+                        <a href="{% url 'game_update_view'  game.pk %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ game.title }}</h5>
+                                <small>{{ game.created }}</small>
+                            </div>
+                            <p class="mb-1">{{ game.description }}</p>
+                        </a>
                     {% endfor %}
-                </ul>
-
+                </div>
             </div>
         </div>
     </div>

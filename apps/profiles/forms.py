@@ -2,10 +2,12 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 
+from profiles.models import Profile
+
 
 class SignUpForm(forms.ModelForm):
     role = forms.ChoiceField(choices=[
-        ('dev', 'developer'),
+        ('developer', 'developer'),
         ('player', 'player')
     ])
 
@@ -31,6 +33,22 @@ class SignUpForm(forms.ModelForm):
         self.fields['role'].widget.attrs = {
             'class': 'form-control'
         }
+
+    def save(self, commit=False):
+        user = User.objects.create_user(
+            self.cleaned_data['email'],
+            self.cleaned_data['email'],
+            self.cleaned_data['password']
+        )
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        user.save()
+
+        Profile.objects.create(
+            user=user,
+            role=self.cleaned_data['role']
+        )
+        return user
 
     class Meta:
         model = User

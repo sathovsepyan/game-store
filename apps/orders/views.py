@@ -1,14 +1,16 @@
 from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 from games.models import Game
 from orders.models import Order
 from orders.forms import CreateOrderForm
+from main.mixins import LoginRequiredMixin
 
 
-class CreateOrderView(CreateView):
+class CreateOrderView(LoginRequiredMixin, CreateView):
     model = Order
     form_class = CreateOrderForm
-    success_url = '/'
+    success_url = reverse_lazy('purchased_game_view')
 
     def dispatch(self, request, *args, **kwargs):
         self.game = Game.objects.get(id=kwargs.get('game_pk'))
