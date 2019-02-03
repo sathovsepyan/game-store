@@ -12,6 +12,9 @@
                 <p class="lead">{{ object.description }}</p>
 
                 <a href="{% url 'create_order_view' object.id %}" class="btn btn-primary">Buy</a>
+                <a href="{% url 'index_page_view' %}" class="btn btn-default">
+                    Go back
+                </a>
             </div>
         </div>
     </div>

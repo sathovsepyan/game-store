@@ -58,7 +58,7 @@ class UpdateGameView(
     success_url = reverse_lazy('game_list_view')
 
 
-class DeveloperDashBoard(LoginRequiredMixin, CheckDevelopPermission, TemplateView):
+class DashBoardView(LoginRequiredMixin, CheckDevelopPermission, TemplateView):
     template_name = 'games/developer_dashboard.html'
 
     def get_games_report(self):
@@ -77,7 +77,7 @@ class DeveloperDashBoard(LoginRequiredMixin, CheckDevelopPermission, TemplateVie
         return context
 
 
-class DeveloperGameListView(LoginRequiredMixin, CheckDevelopPermission, ListView):
+class GameListView(LoginRequiredMixin, CheckDevelopPermission, ListView):
     queryset = Game.objects.filter(is_deleted=False)
     template_name = 'games/game_list.html'
 

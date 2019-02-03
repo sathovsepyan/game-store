@@ -1,11 +1,11 @@
 from django.urls import path
 
 from games.developers import (
-    DeveloperGameListView,
+    GameListView,
     CreateGameView,
     DeleteGameView,
     UpdateGameView,
-    DeveloperDashBoard,
+    DashBoardView,
     GameSalesDetailsView
 )
 
@@ -18,7 +18,7 @@ urlpatterns = [
 
     path(
         'games/',
-        DeveloperGameListView.as_view(),
+        GameListView.as_view(),
         name='game_list_view'
     ),
 
@@ -36,7 +36,7 @@ urlpatterns = [
 
     path(
         '',
-        DeveloperDashBoard.as_view(),
+        DashBoardView.as_view(),
         name='developer_dashboard_view'
     ),
 
