@@ -20,6 +20,9 @@ class GameSearchForm(forms.Form):
         self.fields['category'].widget.attrs = {
             'class': 'form-control mb-2 mr-sm-2',
         }
-        categories_choices = [(category['slug'], category['title'])for category in Category.objects.values('title', 'slug')]
+        categories_choices = [
+            (category['slug'], category['title'])
+            for category in Category.objects.values('title', 'slug')
+        ]
 
         self.fields['category'].choices = categories_choices
