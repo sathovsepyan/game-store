@@ -51,7 +51,21 @@
                         console.error("ERROR: There is no 'gameState' attribute.");               
                     } else {
                         // process data.gameState.
-                        console.log("Game State received from child")
+                        //console.log("Game State received from child")
+                        $.ajax({
+                            url: '/savegame',
+                            method: 'POST',
+                            data: {
+                                'gameState': data.gameState
+                            },
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data) {
+                                    //alert("A user with this username already exists.");
+                                    console.log("Game State saved to database")
+                                }
+                            }
+                        });
                     }
                     break;
                 case "SETTING":
