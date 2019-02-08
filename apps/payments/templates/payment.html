@@ -1,0 +1,11 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<form action="http://payments.webcourse.niksula.hut.fi/pay/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Accept Payment">
+</form>
+
+{% endblock content %}

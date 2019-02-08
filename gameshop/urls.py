@@ -25,5 +25,6 @@ urlpatterns = [
     path('games/', include('games.urls')),
     path('accounts/', include('profiles.urls')),
     path('developers/', include('games.developers_urls')),
+    path('payments/', include('payments.urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]
