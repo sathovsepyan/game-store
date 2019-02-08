@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1>Dashboard</h1>
+                    {% for game in games_stat %}
+                        <p>Title: {{ game.game__title }}</p>
+                        <p>Sold: {{ game.gm_count }}</p>
+                        <a href="{% url 'developers_game_sales_details' game.game__id %}">Details</a>
+                        {% if not forloop.last %}
+                            <hr />
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

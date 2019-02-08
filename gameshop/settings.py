@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'main',
     'categories',
     'games',
-    'profiles'
+    'profiles',
+    'payments',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -127,5 +129,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_URL = '/accounts/sign-in/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 django_heroku.settings(locals())

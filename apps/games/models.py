@@ -21,6 +21,9 @@ class Game(models.Model):
     is_deleted = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Game'
         verbose_name_plural = 'Games'

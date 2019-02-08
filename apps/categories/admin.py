@@ -1,7 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from categories.models import Category
 
-from .models import Category
 
-admin.site.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Category, CategoryAdmin)

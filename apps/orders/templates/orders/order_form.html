@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1>Order confirmation for game {{ game.title }}</h1>
+
+                <p>{{ game.description }}</p>
+                <p>Price: {{ game.price }}</p>
+                <form action="." method="POST">{% csrf_token %}
+                    <div class="form-group d-none">
+                        <label for="{{ form.game.id_for_label }}">{{ form.game.label }}</label>
+                        {{ form.game }}
+                    </div>
+
+                    <div class="form-group d-none">
+                        <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
+                        {{ form.user }}
+                    </div>
+
+                    <div class="form-group d-none">
+                        <label for="{{ form.total_amount.id_for_label }}">{{ form.total_amount.label }}</label>
+                        {{ form.total_amount }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Place order</button>
+                    <a href="{% url 'index_page_view' %}" class="btn btn-link">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

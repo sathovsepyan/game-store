@@ -23,8 +23,11 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('accounts/', include('profiles.urls')),
-    path('', IndexPageView.as_view(), name='index_page_view'),
+    path('orders/', include('orders.urls')),
+    path('games/', include('games.urls')),
+    path('accounts/', include('profiles.urls')),    
     # TODO: To remove from here
     path('playgame/<int:game_id>', views.playgame),
+    path('developers/', include('games.developers_urls')),
+    path('', IndexPageView.as_view(), name='index_page_view')
 ]

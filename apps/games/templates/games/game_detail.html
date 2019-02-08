@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1 class="display-4">{{ object.title }}</h1>
+                <h3>Price</h3>
+                <p>{{ object.price }}</p>
+                
+                <h3>Description</h3>
+                <p class="lead">{{ object.description }}</p>
+
+                <a href="{% url 'create_order_view' object.id %}" class="btn btn-primary">Buy</a>
+                <a href="{% url 'index_page_view' %}" class="btn btn-default">
+                    Go back
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

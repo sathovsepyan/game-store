@@ -1,5 +1,40 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-    {{ form.as_p }}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10">
+                <h1>Sign up</h1>
+                <form action="." method="POST">{% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="{{ form.passowrd.id_for_label }}">{{ form.password.label }}</label>
+                            {{ form.password }}
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                            {{ form.first_name }}
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                            {{ form.last_name }}
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="{{ form.role.id_for_label }}">{{ form.role.label }}</label>
+                            {{ form.role }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 {% endblock content %}

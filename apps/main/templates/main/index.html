@@ -1,5 +1,21 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-    Index page
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <h1>Browse games</h1>
+                {% include "main/includes/search_form.html" %}
+                <ul class="list-group">
+                    {% for game in game_list %}
+                        <li class="list-group-item">
+                            <a href="{% url 'game_detail_view' game.pk %}" class="list-group-item list-group-item-action">
+                                {{ game.title }} by {{ game.developer.get_full_name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
