@@ -1,16 +1,9 @@
-from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from django.shortcuts import render, get_object_or_404
 
 from games.models import Game
 from main.forms import GameSearchForm
 
-
-# TODO: Move from the main app the 'playgame' method to another app that deals the display of the game.
-@login_required
-def playgame(request, game_id):
-    obj = get_object_or_404(Game, pk=game_id)    
-    return  render(request, 'main/gamecontainer.html', {'game': obj})
     
 class IndexPageView(ListView):
     template_name = 'main/index.html'

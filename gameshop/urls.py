@@ -18,7 +18,6 @@ from django.urls import path, include
 
 from main.views import IndexPageView
 
-from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,10 +25,7 @@ urlpatterns = [
     path('orders/', include('orders.urls')),
     path('games/', include('games.urls')),
     path('accounts/', include('profiles.urls')),    
-    # TODO: To remove from here
-    path('playgame/<int:game_id>/', views.playgame),
     path('states/',include('saves.urls')),
-
     path('developers/', include('games.developers_urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]
