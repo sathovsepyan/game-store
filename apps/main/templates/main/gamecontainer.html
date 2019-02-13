@@ -5,6 +5,9 @@
     
     <script>
         /* global $ */
+
+        const gameId = "{{ game.id }}";
+
         $(document).ready(function() {
             'use strict';
 
@@ -28,7 +31,7 @@
                 //Get data from sent message
                 var data = evt.originalEvent.data;
                 
-                console.log(data);
+                // console.log(data);
 
                 if(data.messageType === null || data.messageType === '') {
                     // Error: There is no messageType or is empty in the returned message.
@@ -52,11 +55,12 @@
                     } else {
                         // process data.gameState.
                         //console.log("Game State received from child")
+                        const gameState = JSON.stringify(data.gameState);
                         $.ajax({
-                            url: '/savegame',
-                            method: 'POST',
+                            url: '/savegame/' + gameId + '/',
+                            method: 'GET',
                             data: {
-                                'gameState': data.gameState
+                                'gameState': gameState
                             },
                             dataType: 'json',
                             success: function (data) {
@@ -86,34 +90,45 @@
                     // The service will either respond with LOAD or  ERROR
 
                         // TODO: Load game state from database
-                        var savedGame = {
-                            messageType: "LOAD",
-                            gameState: {
-                                playerItems: [
-                                    "Sword",
-                                    "Wizard Hat"
-                                ],
-                                score: 506.0 // Float
+                        // var savedGame = {
+                        //     messageType: "LOAD",
+                        //     gameState: {
+                        //         playerItems: [
+                        //             "Sword",
+                        //             "Wizard Hat"
+                        //         ],
+                        //         score: 506.0 // Float
+                        //     }
+                        // };
+
+                        $.ajax({        
+                            url: '/savegame/' + gameId + '/load/',
+                            method: 'GET',
+                            dataType: 'json',
+                            success: function (savedGame) {
+                                if (savedGame) {           
+                                    console.log(savedGame)                         
+                                    // If there is a game to Load, then we respond with LOAD, otherwise we respond with ERROR.            
+                                    if (typeof savedGame === 'undefined' || savedGame === null || savedGame === '') {
+                                        
+                                        var messageError = {
+                                            messageType: "ERROR"
+                                        }
+                                        sendMessage(messageError);
+
+                                    } else {
+                                        sendMessage(savedGame);
+                                    }
+                                    console.log("Game loaded from database")
+                                }
                             }
-                        };
-                        //var savedGame = null;
-
-                    // If there is a game to Load, then we respond with LOAD, otherwise we respond with ERROR.            
-                    if (typeof savedGame === 'undefined' || savedGame === null || savedGame === '') {
-                        
-                        var messageError = {
-                            messageType: "ERROR"
-                        }
-                        sendMessage(messageError);
-
-                    } else {
-                        sendMessage(savedGame);
-                    }
+                        });                          
 
                     break;          
                 default:
                     // Error: Invalid messageType
-                    console.error("ERROR: Invalid messageType.");
+                    //console.error("ERROR: Invalid messageType.");
+                    //console.log( data.messageType);
                 }
 
             });

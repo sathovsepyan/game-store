@@ -1,7 +1,7 @@
 from django.db import models
 
 from games.models import Game
-from users.models import User
+from django.contrib.auth.models import User
 
 # var savedGame = {
 #     messageType: "LOAD",
@@ -15,8 +15,8 @@ from users.models import User
 # };
 
 class Save(models.Model):
-    game = models.ForeignKey(Game)
-    user = models.ForeignKey(User)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     gamestate = models.TextField(null=True)
 
     class Meta:
