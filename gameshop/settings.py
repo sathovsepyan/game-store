@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'profiles',
     'payments',
     'orders',
-    'saves'
+    'saves',
+    'scores'
 ]
 
 MIDDLEWARE = [

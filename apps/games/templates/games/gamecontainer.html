@@ -7,6 +7,7 @@
         /* global $ */
 
         const gameId = "{{ game.id }}";
+        const saveGameUrl = "{% url 'save_game_score' game.id %}";
 
         $(document).ready(function() {
             'use strict';
@@ -45,7 +46,20 @@
                         console.error("ERROR: There is no 'score' attribute.");               
                     } else {
                         // process data.score.
-                        console.log("Score received from child")
+                        $.ajax({
+                            url: saveGameUrl,
+                            method: 'GET',
+                            data: {
+                                'score': data.score
+                            },
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data) {
+                                    //alert("A user with this username already exists.");
+                                    console.log("Game State saved to database")
+                                }
+                            }
+                        });
                     }           
                     break;
                 case "SAVE":            
