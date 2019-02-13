@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 
 import json
 
@@ -15,7 +16,11 @@ def savegame(request, game_id):
     data = {}
     data['state'] = 'ok'
 
-    try:
+    # check if the user request.user belongs  to the game/profile.
+    if game not in request.user.profile.games.all():
+        raise PermissionDenied()
+
+    try:        
         toSave = Save.objects.get(game=game, user=user)
         # If we have a save already, we update it
         toSave.gamestate = request.GET.get('gameState')    
@@ -34,6 +39,11 @@ def savegame(request, game_id):
     
 @login_required
 def loadgame(request, game_id): 
+    game = get_object_or_404(Game, pk=game_id)
+    # check if the user request.user belongs  to the game/profile.
+    if game not in request.user.profile.games.all():
+        raise PermissionDenied()
+
     try:
         toLoad = Save.objects.get(game__id=game_id, user=request.user)
         data = {
@@ -50,4 +60,5 @@ def loadgame(request, game_id):
             'messageType': "ERROR",
             'info': 'There are many games to load'
         } 
+
     return JsonResponse(data)
