@@ -18,12 +18,14 @@ from django.urls import path, include
 
 from main.views import IndexPageView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('orders/', include('orders.urls')),
     path('games/', include('games.urls')),
-    path('accounts/', include('profiles.urls')),
+    path('accounts/', include('profiles.urls')),    
+    path('states/',include('saves.urls')),
     path('developers/', include('games.developers_urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]

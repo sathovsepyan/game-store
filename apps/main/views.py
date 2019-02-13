@@ -1,9 +1,10 @@
 from django.views.generic import ListView
+from django.shortcuts import render, get_object_or_404
 
 from games.models import Game
 from main.forms import GameSearchForm
 
-
+    
 class IndexPageView(ListView):
     template_name = 'main/index.html'
     queryset = Game.objects.filter(is_deleted=False)
@@ -20,3 +21,5 @@ class IndexPageView(ListView):
         context = super().get_context_data(**kwargs)
         context['filter_form'] = GameSearchForm(data=self.request.GET or None)
         return context
+
+
