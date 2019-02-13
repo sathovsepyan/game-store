@@ -136,3 +136,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 django_heroku.settings(locals())
+
+# Unique Seller id that was used to generate our secret key
+PAYMENT_SELLER_ID = 'wsdbts2019'
+# The Secret key for our Seller id
+PAYMENT_SECRET_KEY = '73084a91ed99f7b9a3cdf91e41da8641'
