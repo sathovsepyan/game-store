@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'categories',
     'games',
     'profiles',
-    'orders'
+    'orders',
+    'saves',
+    'scores'
 ]
 
 MIDDLEWARE = [

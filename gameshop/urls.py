@@ -18,16 +18,18 @@ from django.urls import path, include
 
 from main.views import IndexPageView
 
+
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('orders/', include('orders.urls')),
     path('games/', include('games.urls')),
     path('accounts/', include('profiles.urls')),
+    path('states/', include('saves.urls')),
+    path('scores/', include('scores.urls')),
     path('developers/', include('games.developers_urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]

@@ -1,0 +1,19 @@
+[
+    {
+       "model":"games.game",
+       "pk":1,
+       "fields":{
+          "url":"http://webcourse.cs.hut.fi/example_game.html",
+          "title":"Sample Game",
+          "description":"Just a sample game to test the message protocol.",
+          "price":10,
+          "developer":1,
+          "status":"active",
+          "is_deleted":false,
+          "created":"2019-02-01T13:57:05.550Z",
+          "category":[
+             1
+          ]
+       }
+    }
+ ]
