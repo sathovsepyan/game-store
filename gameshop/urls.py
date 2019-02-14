@@ -18,6 +18,10 @@ from django.urls import path, include
 
 from main.views import IndexPageView
 
+from django.conf import settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -27,3 +31,6 @@ urlpatterns = [
     path('developers/', include('games.developers_urls')),
     path('', IndexPageView.as_view(), name='index_page_view')
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

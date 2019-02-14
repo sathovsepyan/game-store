@@ -14,6 +14,7 @@ class Game(models.Model):
     url = models.URLField()
     title = models.CharField(max_length=255)
     description = models.TextField()
+    thumbnail = models.ImageField(upload_to ='thumbnail',blank = True)
     price = models.PositiveIntegerField()
     category = models.ManyToManyField(Category)
     developer = models.ForeignKey(User, on_delete=models.CASCADE)
