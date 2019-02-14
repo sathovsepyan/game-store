@@ -3,40 +3,45 @@
 'title', 'url', 'description', 'price', 'category'
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                <h1>Create game</h1>
-                <form method="POST" action="."> {% csrf_token %}
-                    <div class="form-group">
-                        <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
-                        {{ form.title }}
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <h1>Create game</h1>
+            <form method="POST" action="." enctype="multipart/form-data"> {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                    {{ form.title }}
+                </div>
 
-                    <div class="form-group">
-                        <label for="{{ form.url.id_for_label }}">{{ form.url.label }}</label>
-                        {{ form.url }}
-                    </div>
+                <div class="form-group">
+                    <label for="{{ form.url.id_for_label }}">{{ form.url.label }}</label>
+                    {{ form.url }}
+                </div>
 
-                    <div class="form-group">
-                        <label for="{{ form.price.id_for_label }}">{{ form.price.label }}</label>
-                        {{ form.price }}
-                    </div>
+                <div class="form-group">
+                    <label for="{{ form.price.id_for_label }}">{{ form.price.label }}</label>
+                    {{ form.price }}
+                </div>
 
-                    <div class="form-group">
-                        <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
-                        {{ form.description }}
-                    </div>
+                <div class="form-group">
+                    <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+                    {{ form.description }}
+                </div>
 
-                    <div class="form-group">
-                        <label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
-                        {{ form.category }}
-                    </div>
+                <div class="form-group">
+                    <label for="{{ form.category.id_for_label }}">{{ form.category.label }}</label>
+                    {{ form.category }}
+                </div>
 
-                    <button type="submit" class="btn btn-primary">Create game</button>
-                    <a class="btn btn-link" href="{% url 'index_page_view' %}">Cancel</a>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="{{ form.thumbnail.id_for_label }}">{{ form.thumbnail.label }}</label>
+                    {{ form.thumbnail }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create game</button>
+                <a class="btn btn-link" href="{% url 'index_page_view' %}">Cancel</a>
+            </form>
         </div>
     </div>
+</div>
 {% endblock content %}

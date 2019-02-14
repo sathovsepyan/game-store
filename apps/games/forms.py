@@ -4,7 +4,7 @@ from games.models import Game
 
 
 class CreateGameForm(forms.ModelForm):
-    fields = ['title', 'url', 'description', 'price', 'category']
+    fields = ['title', 'url', 'description', 'price', 'category', 'thumbnail']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,4 +15,4 @@ class CreateGameForm(forms.ModelForm):
 
     class Meta:
         model = Game
-        fields = ['title', 'url', 'description', 'price', 'category']
+        fields = ['title', 'url', 'description', 'price', 'category', 'thumbnail']

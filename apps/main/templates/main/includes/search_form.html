@@ -1,8 +1,18 @@
 <form class="form-inline">
     <label class="sr-only" for="{{ filter_form.title.id_for_label }}">Game title</label>
     {{ filter_form.title }}
-    <label class="sr-only" for="{{ filter_form.category.id_for_label }}">Categories</label>
-    {{ filter_form.category }}
+
+
+    <select name="adults[]" class="selectpicker" data-live-search-normalize="true" data-live-search="true"
+        data-container="body" data-header="Categories" 
+        max-options-text="All" title="Select Categories"
+        multiple>
+
+        {% for k in filter_form.choices %}
+        <option value="{{ k.0 }}">{{ k.1 }}</option>
+        {% endfor %}
+    </select>
+
     <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Search</button>
     <a href="{% url 'index_page_view' %}" class="btn btn-default mb-2 mr-sm-2">Reset</a>
 </form>

@@ -72,6 +72,9 @@ def receive_success_payment(request, order_code):
     if originalChecksum != checksum:
         return render(request, 'orders/payment_error.html')
 
+    order.ref = ref
+    order.save()
+
     request.user.profile.games.add(game)
     request.user.save()
 
