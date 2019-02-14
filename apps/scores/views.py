@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.db.models import Max
 from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.core.exceptions import PermissionDenied
 
 from games.models import Game
@@ -45,3 +45,12 @@ class HightScoreView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['high_score_list'] = self.get_high_scores()
         return context
+
+
+class ScoreListView(ListView):
+    model = Score
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(user=self.request.user)
+        return qs

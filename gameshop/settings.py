@@ -141,3 +141,5 @@ django_heroku.settings(locals())
 PAYMENT_SELLER_ID = 'wsdbts2019'
 # The Secret key for our Seller id
 PAYMENT_SECRET_KEY = '73084a91ed99f7b9a3cdf91e41da8641'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

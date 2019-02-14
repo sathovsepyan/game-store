@@ -9,32 +9,29 @@ from main.mixins import LoginRequiredMixin
 from django.conf import settings
 from hashlib import md5
 
+
 class CreateOrderView(LoginRequiredMixin, TemplateView):
     model = Order
     form_class = PaymentForm
     success_url = reverse_lazy('purchased_game_view')
-    template_name = "orders/order_form.html"
+    template_name = 'orders/order_form.html'
 
     def dispatch(self, request, *args, **kwargs):
-        self.game = Game.objects.get(id=kwargs.get('game_pk'))
+        self.game = get_object_or_404(Game, pk=kwargs.get('game_pk'))
+        # check that player already has that game
+        profile = self.request.user.profile
+        if self.game in profile.games.all():
+            return redirect(
+                reverse_lazy('index_page_view')
+            )
+        # check that developer could not buy the game
+        if profile.is_developer:
+            games = Game.objects.filter(developer=self.request.user)
+            if self.game in games:
+                return redirect(
+                    reverse_lazy('index_page_view')
+                )
         return super().dispatch(request, *args, **kwargs)
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        initial = {
-            'game': self.game,
-            'user': self.request.user,
-            'total_amount': self.game.price
-        }
-        kwargs['initial'] = initial
-        return kwargs
-
-    def form_valid(self, form):
-        self.request.user.profile.games.add(self.game)
-        return super().form_valid(form)
-
-    def form_invalid(self, form):
-        return super().form_invalid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -43,10 +40,14 @@ class CreateOrderView(LoginRequiredMixin, TemplateView):
         return context
 
     def get(self, request, *args, **kwargs):
-        order = Order.objects.create(user=self.request.user, total_amount=self.game.price, game=self.game)
+        order = Order.objects.create(
+            user=self.request.user,
+            total_amount=self.game.price,
+            game=self.game
+        )
 
         self.form = PaymentForm(order=order)
-        
+
         return super().get(request, args, kwargs)
 
 
@@ -61,11 +62,11 @@ def receive_success_payment(request, order_code):
 
     order = Order.objects.get(code=pid)
     game = Game.objects.get(id=order.game_id)
-    
-    checksumstr = "pid={}&ref={}&result={}&token={}".format(
+
+    checksumstr = 'pid={}&ref={}&result={}&token={}'.format(
             order.code.hex, ref,
             result, settings.PAYMENT_SECRET_KEY)
-    m = md5(checksumstr.encode("ascii"))
+    m = md5(checksumstr.encode('ascii'))
     originalChecksum = m.hexdigest()
 
     if originalChecksum != checksum:
@@ -76,8 +77,10 @@ def receive_success_payment(request, order_code):
 
     return redirect('purchased_game_view')
 
+
 def receive_error_payment(request, order_code):
     return render(request, 'payment_error.html')
+
 
 def receive_cancel_payment(request, order_code):
     order = Order.objects.get(code=order_code)

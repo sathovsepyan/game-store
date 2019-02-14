@@ -1,47 +1,42 @@
 from django import forms
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 from profiles.models import Profile
 
 
-class SignUpForm(forms.ModelForm):
+class SignUpForm(UserCreationForm):
     role = forms.ChoiceField(choices=[
         ('developer', 'developer'),
         ('player', 'player')
     ])
 
+    email = forms.EmailField()
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].widget.attrs = {
+        self.fields['password1'].widget.attrs.update({
             'class': 'form-control',
-            'placeholder': 'Email'
-        }
+        })
 
-        self.fields['password'].widget.attrs = {
+        self.fields['password2'].widget.attrs.update({
             'class': 'form-control',
-            'placeholder': 'Password'
-        }
-        self.fields['first_name'].widget.attrs = {
+        })
+
+        self.fields['username'].widget.attrs.update({
             'class': 'form-control',
-            'placeholder': 'First name'
-        }
-        self.fields['last_name'].widget.attrs = {
-            'class': 'form-control',
-            'placeholder': 'Second name'
-        }
-        self.fields['role'].widget.attrs = {
+        })
+
+        self.fields['role'].widget.attrs.update({
             'class': 'form-control'
-        }
+        })
 
-    def save(self, commit=False):
-        user = User.objects.create_user(
-            self.cleaned_data['email'],
-            self.cleaned_data['email'],
-            self.cleaned_data['password']
-        )
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
+        self.fields['email'].widget.attrs.update({
+            'class': 'form-control'
+        })
+
+    def save(self, commit=True):
+        user = super().save(commit)
+        user.email = self.cleaned_data.get('email')
         user.save()
 
         Profile.objects.create(
@@ -50,14 +45,14 @@ class SignUpForm(forms.ModelForm):
         )
         return user
 
-    class Meta:
-        model = User
-        fields = [
-            'email',
-            'password',
-            'first_name',
-            'last_name',
-        ]
+    # class Meta:
+    #     model = User
+    #     fields = [
+    #         'email',
+    #         'password',
+    #         'first_name',
+    #         'last_name',
+    #     ]
 
 
 class SignInForm(AuthenticationForm):
@@ -66,7 +61,7 @@ class SignInForm(AuthenticationForm):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs = {
             'class': 'form-control',
-            'placeholder': 'Email address'
+            'placeholder': 'Username'
         }
 
         self.fields['password'].widget.attrs = {

@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h1>Score list</h1>
+                <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Game</th>
+                    <th scope="col">Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for score in score_list %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ score.game.title }}</td>
+                            <td>{{ score.score }}</td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}

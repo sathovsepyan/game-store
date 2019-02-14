@@ -10,6 +10,6 @@ urlpatterns = [
         GameDetailView.as_view(),
         name='game_detail_view'
     ),
-    path('<int:game_id>/play/', views.playgame),
+    path('<int:game_id>/play/', views.playgame, name='play_game_view'),
 ]
 
