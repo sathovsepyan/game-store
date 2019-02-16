@@ -55,8 +55,8 @@ class PaymentForm(forms.Form):
         self.fields['pid'].initial = order.code.hex
         self.fields['amount'].initial = order.total_amount
         self.fields['success_url'].initial = "{}{}".format(
-            "http://127.0.0.1:8000", reverse('payment_success_view', kwargs={'order_code': order.code}))
+            "http://localhost:8000", reverse('payment_success_view', kwargs={'order_code': order.code}))
         self.fields['error_url'].initial = "{}{}".format(
-            "http://127.0.0.1:8000", reverse('payment_error_view', kwargs={'order_code': order.code}))
+            "http://localhost:8000", reverse('payment_error_view', kwargs={'order_code': order.code}))
         self.fields['cancel_url'].initial = "{}{}".format(
-            "http://127.0.0.1:8000", reverse('payment_cancel_view', kwargs={'order_code': order.code}))
+            "http://localhost:8000", reverse('payment_cancel_view', kwargs={'order_code': order.code}))
