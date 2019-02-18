@@ -24,6 +24,7 @@
                             {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% if user.profile.is_developer %}
                                 <a class="dropdown-item" href="{% url 'create_game_view' %}">
                                     Upload game
                                 </a>
@@ -33,6 +34,7 @@
                                 <a href="{% url 'developer_dashboard_view' %}" class="dropdown-item">
                                     Sales dashboard
                                 </a>
+                                {% endif %}
                                 <a class="dropdown-item" href="{% url 'purchased_game_view' %}">
                                     Purchased games
                                 </a>
