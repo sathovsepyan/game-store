@@ -2,48 +2,48 @@
 
 
 {% block javascript %}
-    
-    <script>
-        /* global $ */
 
-        const gameId = "{{ game.id }}";
-        const saveGameUrl = "{% url 'save_game_score' game.id %}";
+<script>
+    /* global $ */
 
-        $(document).ready(function() {
-            'use strict';
+    const gameId = "{{ game.id }}";
+    const saveGameUrl = "{% url 'save_game_score' game.id %}";
 
-            // The iframe of the game
-            var iframeGame = document.getElementById('game_iframe');
+    $(document).ready(function () {
+        'use strict';
 
-            // Send a message to the child iframe
-            var sendMessage = function(msg) {
-                // Make sure you are sending a string, and to stringify JSON
-                iframeGame.contentWindow.postMessage(msg, '*');
-            };
+        // The iframe of the game
+        var iframeGame = document.getElementById('game_iframe');
 
-            $(window).on('message', function(evt) {
+        // Send a message to the child iframe
+        var sendMessage = function (msg) {
+            // Make sure you are sending a string, and to stringify JSON
+            iframeGame.contentWindow.postMessage(msg, '*');
+        };
 
-                //Note that messages from all origins are accepted
+        $(window).on('message', function (evt) {
 
-                //=======================================================
-                // Message Protocol Manipulation
-                //=======================================================
+            //Note that messages from all origins are accepted
 
-                //Get data from sent message
-                var data = evt.originalEvent.data;
-                
-                // console.log(data);
+            //=======================================================
+            // Message Protocol Manipulation
+            //=======================================================
 
-                if(data.messageType === null || data.messageType === '') {
-                    // Error: There is no messageType or is empty in the returned message.
-                    console.error("ERROR: There is no messageType or is empty in the returned message.");
-                }
+            //Get data from sent message
+            var data = evt.originalEvent.data;
 
-                switch(data.messageType) {
+            // console.log(data);
+
+            if (data.messageType === null || data.messageType === '') {
+                // Error: There is no messageType or is empty in the returned message.
+                console.error("ERROR: There is no messageType or is empty in the returned message.");
+            }
+
+            switch (data.messageType) {
                 case "SCORE":
                     if (typeof data.score === 'undefined' || data.score === null || data.score === '') {
                         // Error: There is no 'score' attribute.
-                        console.error("ERROR: There is no 'score' attribute.");               
+                        console.error("ERROR: There is no 'score' attribute.");
                     } else {
                         // process data.score.
                         $.ajax({
@@ -60,12 +60,13 @@
                                 }
                             }
                         });
-                    }           
+                    }
                     break;
-                case "SAVE":            
-                    if (typeof data.gameState === 'undefined' || data.gameState === null || data.gameState === '') {
+                case "SAVE":
+                    if (typeof data.gameState === 'undefined' || data.gameState === null || data.gameState ===
+                        '') {
                         // Error: There is no 'gameState' attribute.
-                        console.error("ERROR: There is no 'gameState' attribute.");               
+                        console.error("ERROR: There is no 'gameState' attribute.");
                     } else {
                         // process data.gameState.
                         //console.log("Game State received from child")
@@ -87,32 +88,34 @@
                     }
                     break;
                 case "SETTING":
-                    if (typeof data.options === 'undefined' || data.options === null || data.options === '') {
+                    if (typeof data.options === 'undefined' || data.options === null || data.options ===
+                        '') {
                         // Error: There is no 'options' attribute.
-                        console.error("ERROR: There is no 'options' attribute.");               
+                        console.error("ERROR: There is no 'options' attribute.");
                     } else {
                         // process data.options
                         console.log("Settings received from child");
                         // TODO: Vaidate that width and height are present.
-                        iframeGame.width = data.options.width;                        
+                        iframeGame.width = data.options.width;
                         iframeGame.height = data.options.height;
                     }
-                    break;         
+                    break;
                 case "LOAD_REQUEST":
                     // process the LOAD_REQUEST
                     // Sent from the game to the service, requesting that a game state (if there is one saved) is sent from the service to the game
                     // The service will either respond with LOAD or  ERROR
 
-                    $.ajax({        
+                    $.ajax({
                         url: '/states/' + gameId + '/load/',
                         method: 'GET',
                         dataType: 'json',
                         success: function (savedGame) {
-                            if (savedGame) {           
-                                console.log(savedGame)                         
+                            if (savedGame) {
+                                console.log(savedGame)
                                 // If there is a game to Load, then we respond with LOAD, otherwise we respond with ERROR.            
-                                if (typeof savedGame === 'undefined' || savedGame === null || savedGame === '') {
-                                    
+                                if (typeof savedGame === 'undefined' || savedGame === null ||
+                                    savedGame === '') {
+
                                     var messageError = {
                                         messageType: "ERROR"
                                     }
@@ -124,20 +127,27 @@
                                 console.log("Game loaded from database")
                             }
                         }
-                    });                          
+                    });
 
-                    break;          
+                    break;
                 default:
                     // Error: Invalid messageType
                     // console.error("ERROR: Invalid messageType.");
                     // console.log( data.messageType);
-                }
+            }
 
-            });
         });
-    </script>
+    });
+</script>
 {% endblock javascript %}
 
 {% block actualcontent %}
-    <iframe id="game_iframe" src={{game.url}} style="border:2px solid red;"></iframe>
+
+<div class="container p-3">
+
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" id="game_iframe" src={{game.url}} frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 {% endblock actualcontent %}
