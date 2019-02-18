@@ -24,3 +24,6 @@ pylint
 
 # Images
 Pillow==5.4.1
+
+# Social share
+django-social-share==1.3.2
