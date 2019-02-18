@@ -243,44 +243,23 @@
     border: 1;
 }
 
-.contact-section {
-    padding: 5rem 0 0;
-}
-
-.contact-section .card {
-    border: 1s;
-    border-bottom: 0.25rem solid #64a19d;
-}
-
-.contact-section .card h4 {
-    font-size: 0.8rem;
-    font-family: 'Varela Round';
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
-}
-
-.contact-section .card hr {
-    border-color: #64a19d;
-    border-width: 0.25rem;
-    width: 3rem;
-}
-
 .contact-section .social {
-    margin-top: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .contact-section .social a {
     text-align: center;
     height: 3rem;
     width: 3rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(182, 182, 182, 0.5);
     border-radius: 100%;
     line-height: 3rem;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(144, 144, 144, 0.8);
 }
 
 .contact-section .social a:hover {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(127, 127, 127, 1);
 }
 
 .contact-section .social a:active {
@@ -326,6 +305,7 @@ footer {
     .categories-align {
         margin-top: -11px !important;
     }
+
     .search-align {
         margin-top: 10px;
     }
@@ -336,4 +316,3 @@ footer {
         margin-top: -21px !important;
     }
 }
-
