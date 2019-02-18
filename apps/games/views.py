@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView
 from django.shortcuts import render, get_object_or_404
 from django.core.exceptions import PermissionDenied
-
+from django.db.models import Q
 from games.models import Game
 
 
@@ -15,6 +15,7 @@ class GameDetailView(DetailView):
         if self.request.user.is_authenticated:
             purchased_games = self.request.user.profile.games.all()
             context['is_purchased'] = self.object in purchased_games
+            context['other_games'] = Game.objects.filter(~Q(id=self.object.id), is_deleted=False)[:6]
         return context
 
 
