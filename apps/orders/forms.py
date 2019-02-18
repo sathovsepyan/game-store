@@ -37,7 +37,7 @@ class PaymentForm(forms.Form):
         order = kwargs.pop('order')
         super().__init__(*args, **kwargs)
 
-        self.fields['amount'].widget.attrs['readonly'] = True
+        self.fields['amount'].widget = forms.HiddenInput()
         self.fields['checksum'].widget = forms.HiddenInput()
         self.fields['sid'].widget = forms.HiddenInput()
         self.fields['pid'].widget = forms.HiddenInput()

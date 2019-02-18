@@ -14,20 +14,25 @@
         {% for game in game_list %}
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
-                <a href="{% url 'game_detail_view'  game.pk %}"><img class="card-img-top" src="{{ game.thumbnail.url }}" alt=""></a>
+                {% if game.thumbnail %}
+                <a href="{% url 'game_detail_view'  game.pk %}">
+                    <img class="card-img-top" src="{{ game.thumbnail.url }}" alt="{{ game.title }}">
+                </a>
+                {% endif %}
+
+
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="{% url 'game_detail_view'  game.pk %}"> {{ game.title }}</a>
                     </h4>
-                    <p class="card-text">{{ game.description }}</p>
-                    <div class="float-left">
-
+                    <h6 class="card-subtitle mb-2 text-muted">by {{ game.developer.get_full_name }}</h6>
+                    <p class="card-text mb-0">{{ game.description }}</p>
+                    <div class="text-right mr-1">
                         <h5>${{ game.price }}</h5>
-                        {{ game.developer.get_full_name }}
                     </div>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="{% url 'game_detail_view'  game.pk %}" class="btn btn-primary">Buy</a>
+                    <a href="{% url 'game_detail_view'  game.pk %}" class="btn btn-primary">Details</a>
                 </div>
             </div>
         </div>

@@ -1,36 +1,34 @@
 {% extends "main/base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                <h1>High Score</h1>
-                <table class="table">
-                <thead>
+<div class="container">
+    <div class="row">
+        <h1 class="p-3">High Scores</h1>
+        <table class="table">
+            <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Game</th>
                     <th scope="col">User</th>
                     <th scope="col">Score</th>
                 </tr>
-                </thead>
-                <tbody>
-                    {% for high_score in high_score_list %}
-                        <tr>
-                            <th scope="row">{{ forloop.counter }}</th>
-                            <td>{{ high_score.game__title }}</td>
-                            <td>{{ high_score.user__email }}</td>
-                            <td>{{ high_score.max_score}}</td>
-                        </tr>
-                    {% endfor %}
-
-                </tbody>
-                </table>
-
-                {% for high_score in high_scores %}
-                    
+            </thead>
+            <tbody>
+                {% for high_score in high_score_list %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ high_score.game__title }}</td>
+                    <td>{{ high_score.user__email }}</td>
+                    <td>{{ high_score.max_score}}</td>
+                </tr>
                 {% endfor %}
-            </div>
-        </div>
+
+            </tbody>
+        </table>
+
+        {% for high_score in high_scores %}
+
+        {% endfor %}
     </div>
+</div>
 {% endblock content %}

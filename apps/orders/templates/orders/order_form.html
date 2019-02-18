@@ -5,15 +5,74 @@
     <div class="row">
         <div class="col-xs-12 col-md-12 p-3">
             <h2>Proceed to checkout</h2>
-            <h4>{{ game.title }}</h4>
+            <!-- <h4>{{ game.title }}</h4>
 
-            <p>{{ game.description }}</p>
+            <p>{{ game.description }}</p> -->
 
-            <form action="http://payments.webcourse.niksula.hut.fi/pay/" method="post">
-                {{ form }}
-                <input type="submit" value="Confirm and pay">
-            </form>
+            <p class="text-muted">Please confirm the payment for the selected game. After pressing confirm you will be
+                redirected to an
+                external payment screen.</p>
         </div>
+        <div class="col-xs-6 col-md-6">
+            <div class="card mb-5 mb-lg-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-fluid card-img-left pl-4" src="{{ game.thumbnail.url }}" alt="{{ game.title }}">
+                        </div>
+                        <div class="col-md-9">
+                            <h4 class="card-title text-muted text-uppercase pl-3">{{ game.title }}</h4>
+                            <h6 class="card-price pl-3"><b>${{ game.price }}</b></h6>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                            <dl class="row">
+                                <dt class="col-sm-3">By</dt>
+                                <dd class="col-sm-9"> {{ game.developer.get_full_name }}</dd>
+                            </dl>
+                        </li>
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                            <dl class="row">
+                                <dt class="col-sm-3">Category</dt>
+                                <dd class="col-sm-9">
+                                    {{ game.category.all|join:", " }}
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                            <dl class="row">
+                                <dt class="col-sm-3">Description</dt>
+                                <dd class="col-sm-9"> {{ game.description }}</dd>
+                            </dl>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="card-footer">
+                    <h5>Order total: <b> ${{ game.price }}</b></h5>
+                    <p class="text-muted">
+                        By clicking confirm you agree to the Terms and Conditions.
+                    </p>
+                    <form action="http://payments.webcourse.niksula.hut.fi/pay/" method="post">
+                        {{ form }}
+                        <input type="submit" value="Confirm and Pay" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <p>Please confirm the payment for the selected game. After pressing confirm you will be redirected to an
+            external payment screen.</p> -->
+
+        <!-- <form action="http://payments.webcourse.niksula.hut.fi/pay/" method="post">
+                {{ form }}
+                <input type="submit" value="Confirm and pay" class="btn btn-primary">
+            </form> -->
+
     </div>
+
 </div>
 {% endblock content %}
