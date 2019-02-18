@@ -7,8 +7,13 @@
 1. Team assignation.
 1. Instructions on how to use the application.
 
+#### Member names and student IDs
 
-#### Implementation order and timetable (draft)
+* Timur Kartaev, Student ID:  727642
+* Satenik Hovsepyan, Student ID: 727561
+* Bruno Duarte, Student ID: 727396
+
+#### Features implemented, self-grading, comments
 
 <table>
   <tr>
@@ -81,3 +86,9 @@
     Comments:
   </td>
 </table>
+
+#### Team assignation
+
+
+#### Instructions on how to use the application
+
