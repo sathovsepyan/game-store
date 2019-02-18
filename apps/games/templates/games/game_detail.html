@@ -1,6 +1,15 @@
 {% extends "main/base.html" %}
 
+{% block css %}
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:title" content="{{ object.title }}" />
+    <meta property="og:image" content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ game.thumbnail.url }}" />
+{% endblock css %}
+
 {% block content %}
+{% load social_share %}
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-12 p-3">
@@ -30,6 +39,9 @@
                     <a href="{% url 'index_page_view' %}" class="btn btn-default">
                         Go back
                     </a>
+                    {% post_to_facebook object.id.decode %}
+                    {% post_to_twitter "{{object.title}} is an awesome game!" object.id.decode "Post to Twitter" %}
+
                 </div>
 
 
