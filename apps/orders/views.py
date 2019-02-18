@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
@@ -16,21 +17,23 @@ class CreateOrderView(LoginRequiredMixin, TemplateView):
     success_url = reverse_lazy('purchased_game_view')
     template_name = 'orders/order_form.html'
 
+    # @login_required
     def dispatch(self, request, *args, **kwargs):
         self.game = get_object_or_404(Game, pk=kwargs.get('game_pk'))
         # check that player already has that game
-        profile = self.request.user.profile
-        if self.game in profile.games.all():
-            return redirect(
-                reverse_lazy('index_page_view')
-            )
-        # check that developer could not buy the game
-        if profile.is_developer:
-            games = Game.objects.filter(developer=self.request.user)
-            if self.game in games:
+        if self.request.user.is_authenticated:
+            profile = self.request.user.profile
+            if self.game in profile.games.all():
                 return redirect(
                     reverse_lazy('index_page_view')
                 )
+            # check that developer could not buy the game
+            if profile.is_developer:
+                games = Game.objects.filter(developer=self.request.user)
+                if self.game in games:
+                    return redirect(
+                        reverse_lazy('index_page_view')
+                    )
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
