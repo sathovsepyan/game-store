@@ -56,11 +56,26 @@ class ScoreListView(ListView):
         return qs
 
 
-class ScoreGameView(ListView):
+class ScoreGameView(TemplateView):
     template_name = 'scores/score_game.html'
-    model = Score
 
-    def get_queryset(self):
-        qs = super().get_queryset()
-        qs = qs.filter(game=self.kwargs['game_pk']).order_by('-score')
-        return qs
+    def get_scores_by_game(self):
+        high_scores = Score.objects.values(
+            'game__id',
+            'game__title'
+        ).annotate(
+            max_score=Max('score')
+        ).filter(
+            game=self.kwargs['game_pk']
+        ).values(
+            'game__id',
+            'game__title',
+            'user__email',
+            'max_score'
+        ).order_by('-max_score')
+        return high_scores
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['high_score_list'] = self.get_scores_by_game()
+        return context
