@@ -244,7 +244,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Generating the metadata dynamically was a challenge because the host should be included in the path in order for the social service fetch the image. After researching a bit we found request.build_absolute_uri and request.get_host that did the job.
   </td>
 </table>
 
