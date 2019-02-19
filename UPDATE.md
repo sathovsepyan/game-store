@@ -23,7 +23,7 @@
       Authentication (mandatory, 100-200 points):
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 200 points
     </th>
   </tr>
   <tr>
@@ -46,7 +46,7 @@
       Basic player functionalities (mandatory, 100-300 points):
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 300 points
     </th>
   </tr>
   <tr>
@@ -67,10 +67,33 @@
 <table>
   <tr>
     <th>
+      Basic developer functionalities (mandatory, 100-200 points):
+    </th>
+    <th> 
+      Self-grading: 200 points
+    </th>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <ul>
+        <li>Add a game</li>
+        <li>Basic game inventory and sales statistics</li>
+        <li>Security restrictions, e.g. developers are only allowed to modify/add/etc. their own games, developer can only add games to their own inventory</li>
+      </ul>
+    </td>
+  </tr>
+  <td colspan="2">
+    Comments:
+  </td>
+</table>
+
+<table>
+  <tr>
+    <th>
       Game/service interaction (mandatory 100-200 points):
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 200 points
     </th>
   </tr>
   <tr>
@@ -96,7 +119,7 @@
       Quality of Work (mandatory 0-100 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 100 points
     </th>
   </tr>
   <tr>
@@ -122,7 +145,7 @@
       Non-functional requirements (mandatory 0-200 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 200 points
     </th>
   </tr>
   <tr>
@@ -145,7 +168,7 @@
       Save/load and resolution feature (0-100 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 100 points
     </th>
   </tr>
   <tr>
@@ -164,52 +187,10 @@
 <table>
   <tr>
     <th>
-      3rd party login (0-100 points)
-    </th>
-    <th> 
-      Self-grading: 
-    </th>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <ul>
-        <li>Allow OpenID, Gmail or Facebook login to your system</li>
-      </ul>
-    </td>
-  </tr>
-  <td colspan="2">
-    Comments:
-  </td>
-</table>
-
-<table>
-  <tr>
-    <th>
-      RESTful API (0-100 points)
-    </th>
-    <th> 
-      Self-grading: 
-    </th>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <ul>
-        <li>Design and Implement some RESTful API to the service</li>
-      </ul>
-    </td>
-  </tr>
-  <td colspan="2">
-    Comments:
-  </td>
-</table>
-
-<table>
-  <tr>
-    <th>
       Own game (0-100 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 100 points
     </th>
   </tr>
   <tr>
@@ -230,7 +211,7 @@
       Mobile Friendly (0-50 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 50 points
     </th>
   </tr>
   <tr>
@@ -251,7 +232,7 @@
       Social media sharing (0-50 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 50 points
     </th>
   </tr>
   <tr>
