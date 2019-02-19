@@ -60,7 +60,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Playing the game snake was a problem because it needs the input from the keyboard, and when the webpage is loaded, doesn't have the focus. We force with JavaScript to catch the focus of the Iframe after the webpage was loaded.
   </td>
 </table>
 
