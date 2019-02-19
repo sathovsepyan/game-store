@@ -109,7 +109,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Updating the score was not a big problem as trying to show the scores, because it needs to be aggreated (MAX() and Group BY in SQL), we dive in the use of overriding templates and methods from the inner Django framework as get_context_data() and get_queryset() as well as the feature of using aggregation within the ORM of Django.
   </td>
 </table>
 
