@@ -263,6 +263,7 @@
 Go to: https://wsd-project-007.herokuapp.com/
 
 Sign-up as a Developer and create some games.
+
 In order to test our own game, please create a game with https://wsd-project-007.herokuapp.com/static/snake.html as the URL. 
 
 Then, you should sign-up another account as a Player.
