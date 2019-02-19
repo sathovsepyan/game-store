@@ -10,4 +10,4 @@ class Score(models.Model):
     score = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f'{self.user.get_full_name()} - {self.game.title} - {self.score}'
+        return f'{self.user.username} - {self.game.title} - {self.score}'

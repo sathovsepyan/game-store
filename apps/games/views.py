@@ -15,7 +15,7 @@ class GameDetailView(DetailView):
         if self.request.user.is_authenticated:
             purchased_games = self.request.user.profile.games.all()
             context['is_purchased'] = self.object in purchased_games
-            context['other_games'] = Game.objects.filter(~Q(id=self.object.id), is_deleted=False)[:6]
+        context['other_games'] = Game.objects.filter(~Q(id=self.object.id), is_deleted=False)[:6]
         return context
 
 

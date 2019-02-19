@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-12 p-3">
             <h1>{{ object.title }}
-                <small>by {{ object.developer.get_full_name }}</small>
+                <small>by {{ object.developer.username }}</small>
             </h1>
 
             <div class="row">
@@ -35,11 +35,11 @@
                         Buy
                     </a>
                     {% endif %}
+                    <a href="{% url 'score_by_game' game.id %}" class="btn btn-primary">
+                        Scores
+                    </a>
                     <a href="{% url 'index_page_view' %}" class="btn btn-default">
                         Go back
-                    </a>
-                    <a href="{% url 'score_by_game' game.id %}" class="btn btn-default">
-                        Scores
                     </a>
                     <section class="contact-section">
                         <div class="social d-flex">
