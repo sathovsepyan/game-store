@@ -259,3 +259,10 @@
     
 #### 4. Instructions on how to use the application
 
+Go to: https://wsd-project-007.herokuapp.com/
+
+Sign-up as a Developer and create some games.
+
+Then, you should sign-up another account as a Player.
+
+Buy some games as a Player, and start having fun!
