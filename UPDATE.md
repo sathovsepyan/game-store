@@ -84,7 +84,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: In general, all good.
   </td>
 </table>
 
@@ -134,7 +134,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We separated all apps of Django and put them under a general app folder. Instead of defining methods alone in the views, sometimes depending of the case we use classes that inherits from TemplateView or ListView.
   </td>
 </table>
 
@@ -158,7 +158,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We try to stick to the plan, but mainly we attack the requirements by features. A lot of communication and peer-feedback over each attempt. We believe we balance the job very well!
   </td>
 </table>
 
@@ -180,7 +180,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: All good, just a few more listeners were needed to communicate from the Store to the game and that was it.
   </td>
 </table>
 
@@ -202,7 +202,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We adapt a snake game with the message protocol, the hard part was to make it visible the variables of the state of the game as well as restoring the game, but all good at the end.
   </td>
 </table>
 
@@ -223,7 +223,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Bootstrap did the job!
   </td>
 </table>
 
