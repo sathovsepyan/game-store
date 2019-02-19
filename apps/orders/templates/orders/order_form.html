@@ -27,26 +27,26 @@
                     </div>
 
                     <hr>
-                    <ul class="fa-ul">
-                        <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                    <ul >
+                        <li>
                             <dl class="row">
-                                <dt class="col-sm-3">By</dt>
-                                <dd class="col-sm-9"> {{ game.developer.username }}</dd>
+                                <dt class="col-sm-4">By</dt>
+                                <dd class="col-sm-8"> {{ game.developer.username }}</dd>
                             </dl>
                         </li>
-                        <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                        <li>
                             <dl class="row">
-                                <dt class="col-sm-3">Category</dt>
-                                <dd class="col-sm-9">
+                                <dt class="col-sm-4">Category</dt>
+                                <dd class="col-sm-8">
                                     {{ game.category.all|join:", " }}
                                 </dd>
                             </dl>
                         </li>
 
-                        <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                        <li>
                             <dl class="row">
-                                <dt class="col-sm-3">Description</dt>
-                                <dd class="col-sm-9"> {{ game.description }}</dd>
+                                <dt class="col-sm-4">Description</dt>
+                                <dd class="col-sm-8"> {{ game.description }}</dd>
                             </dl>
                         </li>
                     </ul>
