@@ -250,6 +250,12 @@
 
 #### 3. Team assignation
 
-
+* Timur Kartaev: 
+    * Design of models, Sign-up of users and developers, Upload games to store, Security for unauthorized access, Sales statistics
+* Satenik Hovsepyan:
+    * Payment gateway, Purchased games by user, Aesthetic for the front-end, Search games in the store, Mobile friendly feature
+* Bruno Duarte:
+    * Message Protocol, Creation of a new game, Aggregation of scores, Playing a game, Saving and loading games from database, Social media sharing.
+    
 #### 4. Instructions on how to use the application
 
