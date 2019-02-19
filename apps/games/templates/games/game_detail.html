@@ -35,11 +35,11 @@
                         Buy
                     </a>
                     {% endif %}
+                    <a href="{% url 'score_by_game' game.id %}" class="btn btn-primary">
+                        Scores
+                    </a>
                     <a href="{% url 'index_page_view' %}" class="btn btn-default">
                         Go back
-                    </a>
-                    <a href="{% url 'score_by_game' game.id %}" class="btn btn-default">
-                        Scores
                     </a>
                     <section class="contact-section">
                         <div class="social d-flex">
