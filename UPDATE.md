@@ -36,7 +36,8 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We used Django's Authentication system (django.contrib.auth) with it's User model, as well as, 
+    extended it with Profile model to represent Developers/Players. 
   </td>
 </table>
 
