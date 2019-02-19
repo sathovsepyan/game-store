@@ -39,6 +39,9 @@
                     <a href="{% url 'index_page_view' %}" class="btn btn-default">
                         Go back
                     </a>
+                    <a href="{% url 'score_by_game' game.id %}" class="btn btn-default">
+                        Scores
+                    </a>
                     {% post_to_facebook object.id.decode %}
                     {% post_to_twitter "{{object.title}} is an awesome game!" object.id.decode "Post to Twitter" %}
 
