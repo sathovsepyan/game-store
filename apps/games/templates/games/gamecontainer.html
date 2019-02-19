@@ -137,6 +137,14 @@
             }
 
         });
+    
+        function setFocusThickboxIframe() {
+            var iframe = $("#game_iframe")[0];
+            iframe.contentWindow.focus();
+        }
+
+        setTimeout(setFocusThickboxIframe, 100);
+
     });
 </script>
 {% endblock javascript %}
