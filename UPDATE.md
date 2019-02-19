@@ -1,5 +1,7 @@
 ## Project update February 2019
 
+![](/static/gameshop_snapshot.jpg)
+
 #### Outline
 
 1. Member names and student IDs
@@ -7,13 +9,13 @@
 1. Team assignation.
 1. Instructions on how to use the application.
 
-#### Member names and student IDs
+#### 1. Member names and student IDs
 
 * Timur Kartaev, Student ID:  727642
 * Satenik Hovsepyan, Student ID: 727561
 * Bruno Duarte, Student ID: 727396
 
-#### Features implemented, self-grading, comments
+#### 2. Features implemented, self-grading, comments
 
 <table>
   <tr>
@@ -265,8 +267,8 @@
 </table>
 
 
-#### Team assignation
+#### 3. Team assignation
 
 
-#### Instructions on how to use the application
+#### 4. Instructions on how to use the application
 
