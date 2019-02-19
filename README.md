@@ -1,4 +1,5 @@
 ###### CS-C3170 - Web Software Development
+:new: :warning: Please go to [the UPDATE.md file](UPDATE.md) for the latest details about the project :bangbang:.
 
 # WSD Autum 2018 Project - Game Store
 
