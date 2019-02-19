@@ -1,10 +1,10 @@
 {% extends "main/base.html" %}
 
 {% block css %}
-    <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-    <meta property="og:title" content="{{ object.title }}" />
-    <meta property="og:image" content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ game.thumbnail.url }}" />
+	<meta name="twitter:card" content="summary" />
+	<meta property="og:url" content="{{ request.build_absolute_uri }}" />
+	<meta property="og:title" content="{{ object.title }}" />
+	<meta property="og:image" content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ game.thumbnail.url }}" />
 {% endblock css %}
 
 {% block content %}
@@ -25,7 +25,6 @@
                 <div class="col-md-8">
                     <h3 class="my-3">Description</h3>
                     <p>{{ object.description }}</p>
-                    
                     <hr id="hr-thick" class="d-none d-lg-block mb-0 ml-0">
                     <h3 class="my-3">Price</h3>
                     <p>${{ object.price }}</p>
@@ -42,17 +41,19 @@
                     <a href="{% url 'score_by_game' game.id %}" class="btn btn-default">
                         Scores
                     </a>
-                    {% post_to_facebook object.id.decode %}
-                    {% post_to_twitter "{{object.title}} is an awesome game!" object.id.decode "Post to Twitter" %}
-
+                    <section class="contact-section">
+                        <div class="social d-flex">
+                            <h4 class="my-2 mr-2">Share</h4>
+                            {% post_to_facebook object.id.decode %}
+                            {% post_to_twitter "{{object.title}} is an awesome game!" object.id.decode "Post to Twitter" %}
+                        </div>
+                    </section>
                 </div>
-
-
+            
                 <h3 class="my-4 pt-5">You may also like:</h3>
                 <div class="row">
 
                     {% for game in other_games %}
-
 
                     <div class="col-md-2 col-sm-6 mb-4">
                         <a href="{% url 'game_detail_view'  game.pk %}">
