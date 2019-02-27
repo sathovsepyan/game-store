@@ -7,7 +7,7 @@ from django.conf import settings
 
 class CreateOrderForm(forms.ModelForm):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):        
         super().__init__(*args, **kwargs)
         fields = ['game', 'user', 'total_amount']
         for field in fields:
@@ -35,6 +35,7 @@ class PaymentForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         order = kwargs.pop('order')
+        request = kwargs.pop('request', None)
         super().__init__(*args, **kwargs)
 
         self.fields['amount'].widget = forms.HiddenInput()
@@ -54,9 +55,16 @@ class PaymentForm(forms.Form):
         self.fields['sid'].initial = settings.PAYMENT_SELLER_ID
         self.fields['pid'].initial = order.code.hex
         self.fields['amount'].initial = order.total_amount
+
+        hostname = ""
+        if request.is_secure():
+            hostname = "https://" + request.get_host()
+        else:
+            hostname = "http://" + request.get_host()
+
         self.fields['success_url'].initial = "{}{}".format(
-            "http://localhost:8000", reverse('payment_success_view', kwargs={'order_code': order.code}))
+            hostname, reverse('payment_success_view', kwargs={'order_code': order.code}))
         self.fields['error_url'].initial = "{}{}".format(
-            "http://localhost:8000", reverse('payment_error_view', kwargs={'order_code': order.code}))
+            hostname, reverse('payment_error_view', kwargs={'order_code': order.code}))
         self.fields['cancel_url'].initial = "{}{}".format(
-            "http://localhost:8000", reverse('payment_cancel_view', kwargs={'order_code': order.code}))
+            hostname, reverse('payment_cancel_view', kwargs={'order_code': order.code}))

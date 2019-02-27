@@ -49,7 +49,7 @@ class CreateOrderView(LoginRequiredMixin, TemplateView):
             game=self.game
         )
 
-        self.form = PaymentForm(order=order)
+        self.form = PaymentForm(order=order, request=self.request)
 
         return super().get(request, args, kwargs)
 
