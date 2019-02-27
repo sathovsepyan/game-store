@@ -23,7 +23,7 @@
       Authentication (mandatory, 100-200 points):
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 200 points
     </th>
   </tr>
   <tr>
@@ -36,7 +36,8 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We used Django's Authentication system (django.contrib.auth) with it's User model, as well as, 
+    extended it with Profile model to represent Developers/Players. 
   </td>
 </table>
 
@@ -46,7 +47,7 @@
       Basic player functionalities (mandatory, 100-300 points):
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 300 points
     </th>
   </tr>
   <tr>
@@ -60,7 +61,30 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Playing the game snake was a problem because it needs the input from the keyboard, and when the webpage is loaded, doesn't have the focus. We force with JavaScript to catch the focus of the Iframe after the webpage was loaded.
+  </td>
+</table>
+
+<table>
+  <tr>
+    <th>
+      Basic developer functionalities (mandatory, 100-200 points):
+    </th>
+    <th> 
+      Self-grading: 200 points
+    </th>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <ul>
+        <li>Add a game</li>
+        <li>Basic game inventory and sales statistics</li>
+        <li>Security restrictions, e.g. developers are only allowed to modify/add/etc. their own games, developer can only add games to their own inventory</li>
+      </ul>
+    </td>
+  </tr>
+  <td colspan="2">
+    Comments: In general, all good.
   </td>
 </table>
 
@@ -70,7 +94,7 @@
       Game/service interaction (mandatory 100-200 points):
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 200 points
     </th>
   </tr>
   <tr>
@@ -85,7 +109,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Updating the score was not a big problem as trying to show the scores, because it needs to be aggreated (MAX() and Group BY in SQL), we dive in the use of overriding templates and methods from the inner Django framework as get_context_data() and get_queryset() as well as the feature of using aggregation within the ORM of Django.
   </td>
 </table>
 
@@ -96,7 +120,7 @@
       Quality of Work (mandatory 0-100 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 100 points
     </th>
   </tr>
   <tr>
@@ -110,7 +134,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We separated all apps of Django and put them under a general app folder. Instead of defining methods alone in the views, sometimes depending of the case we use classes that inherits from TemplateView or ListView.
   </td>
 </table>
 
@@ -122,7 +146,7 @@
       Non-functional requirements (mandatory 0-200 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 200 points
     </th>
   </tr>
   <tr>
@@ -134,7 +158,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We try to stick to the plan, but mainly we attack the requirements by features. A lot of communication and peer-feedback over each attempt. We believe we balance the job very well!
   </td>
 </table>
 
@@ -145,7 +169,7 @@
       Save/load and resolution feature (0-100 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 100 points
     </th>
   </tr>
   <tr>
@@ -156,52 +180,10 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: All good, just a few more listeners were needed to communicate from the Store to the game and that was it.
   </td>
 </table>
 
-
-<table>
-  <tr>
-    <th>
-      3rd party login (0-100 points)
-    </th>
-    <th> 
-      Self-grading: 
-    </th>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <ul>
-        <li>Allow OpenID, Gmail or Facebook login to your system</li>
-      </ul>
-    </td>
-  </tr>
-  <td colspan="2">
-    Comments:
-  </td>
-</table>
-
-<table>
-  <tr>
-    <th>
-      RESTful API (0-100 points)
-    </th>
-    <th> 
-      Self-grading: 
-    </th>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <ul>
-        <li>Design and Implement some RESTful API to the service</li>
-      </ul>
-    </td>
-  </tr>
-  <td colspan="2">
-    Comments:
-  </td>
-</table>
 
 <table>
   <tr>
@@ -209,7 +191,7 @@
       Own game (0-100 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 100 points
     </th>
   </tr>
   <tr>
@@ -220,7 +202,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: We adapt a snake game with the message protocol, the hard part was to make it visible the variables of the state of the game as well as restoring the game, but all good at the end.
   </td>
 </table>
 
@@ -230,7 +212,7 @@
       Mobile Friendly (0-50 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 50 points
     </th>
   </tr>
   <tr>
@@ -241,7 +223,7 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Bootstrap did the job!
   </td>
 </table>
 
@@ -251,7 +233,7 @@
       Social media sharing (0-50 points)
     </th>
     <th> 
-      Self-grading: 
+      Self-grading: 50 points
     </th>
   </tr>
   <tr>
@@ -262,13 +244,29 @@
     </td>
   </tr>
   <td colspan="2">
-    Comments:
+    Comments: Generating the metadata dynamically was a challenge because the host should be included in the path in order for the social service fetch the image. After researching a bit we found request.build_absolute_uri and request.get_host that did the job.
   </td>
 </table>
 
 
 #### 3. Team assignation
 
-
+* Timur Kartaev: 
+    * Design of models, Sign-up of users and developers, Upload games to store, Security for unauthorized access, Sales statistics, Searching of games backend
+* Satenik Hovsepyan:
+    * Payment gateway, Purchased games by user, Aesthetic for the front-end, Search games in the store front-end, Mobile friendly feature
+* Bruno Duarte:
+    * Message Protocol, Creation of a new game, Aggregation of scores, Playing a game, Saving and loading games from database, Social media sharing.
+    
 #### 4. Instructions on how to use the application
+
+Go to: https://wsd-project-007.herokuapp.com/
+
+Sign-up as a Developer and create some games.
+
+In order to test our own game, please create a game with https://wsd-project-007.herokuapp.com/static/snake.html as the URL. 
+
+Then, you should sign-up another account as a Player.
+
+Buy some games as a Player, and start having fun!
 
